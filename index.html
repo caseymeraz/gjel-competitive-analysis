@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GJEL.com SEO Competitive Analysis | Northern California PI Market</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f1117;
+            --surface: #1a1d27;
+            --surface-2: #232734;
+            --border: #2e3348;
+            --text: #e4e6ef;
+            --text-muted: #9298b4;
+            --accent: #6366f1;
+            --accent-light: #818cf8;
+            --green: #22c55e;
+            --green-bg: rgba(34, 197, 94, 0.1);
+            --red: #ef4444;
+            --red-bg: rgba(239, 68, 68, 0.1);
+            --yellow: #eab308;
+            --yellow-bg: rgba(234, 179, 8, 0.1);
+            --orange: #f97316;
+            --orange-bg: rgba(249, 115, 22, 0.1);
+            --blue: #3b82f6;
+            --blue-bg: rgba(59, 130, 246, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        .hero {
+            padding: 60px 0 40px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 6px 14px;
+            border-radius: 6px;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero .subtitle {
+            font-size: 18px;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .hero .date {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-top: 12px;
+        }
+
+        /* Baseline Section */
+        .baseline {
+            padding: 48px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .baseline-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .metric-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .metric-card .label {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .metric-card .value {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--text);
+        }
+
+        .metric-card .value.accent {
+            color: var(--accent-light);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 48px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 5px 12px;
+            border-radius: 5px;
+            margin-bottom: 16px;
+        }
+
+        .section-label.tier-1 {
+            background: var(--red-bg);
+            color: var(--red);
+        }
+
+        .section-label.tier-2 {
+            background: var(--orange-bg);
+            color: var(--orange);
+        }
+
+        .section-label.tier-3 {
+            background: var(--yellow-bg);
+            color: var(--yellow);
+        }
+
+        .section-label.gaps {
+            background: var(--blue-bg);
+            color: var(--blue);
+        }
+
+        .section-label.strengths {
+            background: var(--green-bg);
+            color: var(--green);
+        }
+
+        .section h2 {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            letter-spacing: -0.3px;
+        }
+
+        .section h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .section-desc {
+            color: var(--text-muted);
+            font-size: 15px;
+            margin-bottom: 32px;
+            max-width: 700px;
+        }
+
+        /* Competitor Cards */
+        .competitor-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 24px;
+        }
+
+        .competitor-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .competitor-name {
+            font-size: 22px;
+            font-weight: 800;
+        }
+
+        .competitor-url {
+            font-size: 14px;
+            color: var(--accent-light);
+            font-weight: 500;
+        }
+
+        .competitor-tag {
+            font-size: 12px;
+            font-weight: 700;
+            padding: 5px 12px;
+            border-radius: 6px;
+            white-space: nowrap;
+        }
+
+        .tag-danger {
+            background: var(--red-bg);
+            color: var(--red);
+        }
+
+        .tag-warning {
+            background: var(--orange-bg);
+            color: var(--orange);
+        }
+
+        .tag-info {
+            background: var(--blue-bg);
+            color: var(--blue);
+        }
+
+        .competitor-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .comp-metric {
+            background: var(--surface-2);
+            border-radius: 8px;
+            padding: 16px;
+        }
+
+        .comp-metric .label {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+
+        .comp-metric .value {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .markets-label {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .markets-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 24px;
+        }
+
+        .market-tag {
+            font-size: 12px;
+            font-weight: 500;
+            padding: 4px 10px;
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-muted);
+        }
+
+        /* Tables */
+        .table-wrap {
+            overflow-x: auto;
+            margin: 16px 0;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        thead {
+            background: var(--surface-2);
+        }
+
+        th {
+            text-align: left;
+            padding: 12px 16px;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--text-muted);
+            white-space: nowrap;
+        }
+
+        td {
+            padding: 12px 16px;
+            border-top: 1px solid var(--border);
+            white-space: nowrap;
+        }
+
+        tr:hover td {
+            background: rgba(99, 102, 241, 0.04);
+        }
+
+        .pos-good {
+            color: var(--green);
+            font-weight: 700;
+        }
+
+        .pos-ok {
+            color: var(--yellow);
+            font-weight: 700;
+        }
+
+        .pos-bad {
+            color: var(--red);
+            font-weight: 700;
+        }
+
+        .pos-none {
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        .kw-cell {
+            white-space: normal;
+            min-width: 220px;
+        }
+
+        /* Analysis Box */
+        .analysis-box {
+            background: var(--surface-2);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 8px 8px 0;
+            padding: 20px 24px;
+            margin-top: 20px;
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--text-muted);
+        }
+
+        .analysis-box strong {
+            color: var(--text);
+        }
+
+        /* Summary Cards */
+        .summary-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .summary-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .gap-card, .strength-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .gap-card {
+            border-left: 3px solid var(--red);
+        }
+
+        .strength-card {
+            border-left: 3px solid var(--green);
+        }
+
+        .gap-card h4, .strength-card h4 {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .gap-card p, .strength-card p {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Ranking Table */
+        .rank-table {
+            margin-top: 32px;
+        }
+
+        .rank-row {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 20px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 8px;
+        }
+
+        .rank-num {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--accent-light);
+            min-width: 32px;
+        }
+
+        .rank-info {
+            flex: 1;
+        }
+
+        .rank-info .firm-name {
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .rank-info .firm-reason {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        /* Top Keywords Table */
+        .top-kw-section {
+            margin-top: 32px;
+        }
+
+        .top-kw-section h3 {
+            margin-bottom: 16px;
+        }
+
+        /* Observation Callout */
+        .callout {
+            background: var(--yellow-bg);
+            border: 1px solid rgba(234, 179, 8, 0.2);
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin-top: 24px;
+            font-size: 14px;
+            color: var(--yellow);
+        }
+
+        .callout strong {
+            color: var(--yellow);
+        }
+
+        /* Market footprint */
+        .footprint {
+            margin-top: 24px;
+        }
+
+        .footprint h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .city-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .city-tag {
+            font-size: 13px;
+            font-weight: 500;
+            padding: 6px 14px;
+            background: var(--accent);
+            background: rgba(99, 102, 241, 0.15);
+            color: var(--accent-light);
+            border-radius: 8px;
+        }
+
+        /* Tier 2 compact cards */
+        .t2-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 16px;
+        }
+
+        .t2-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .t2-card h4 {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .t2-card .t2-url {
+            font-size: 13px;
+            color: var(--accent-light);
+            margin-bottom: 12px;
+        }
+
+        .t2-stats {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+        }
+
+        .t2-stat {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .t2-stat span {
+            font-weight: 700;
+            color: var(--text);
+            font-size: 14px;
+        }
+
+        .t2-card p {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Tier 3 */
+        .t3-table {
+            margin-top: 16px;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 40px 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        .footer a {
+            color: var(--accent-light);
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 26px;
+            }
+
+            .section h2 {
+                font-size: 22px;
+            }
+
+            .competitor-card {
+                padding: 20px;
+            }
+
+            .baseline-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .competitor-metrics {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero -->
+    <div class="container">
+        <div class="hero">
+            <span class="hero-badge">SEO Competitive Analysis</span>
+            <h1>GJEL.com</h1>
+            <p class="subtitle">Northern California Personal Injury Market</p>
+            <p class="date">March 19, 2026</p>
+        </div>
+    </div>
+
+    <!-- Baseline Metrics -->
+    <div class="container">
+        <div class="baseline">
+            <h2>GJEL Baseline Metrics</h2>
+            <div class="baseline-grid">
+                <div class="metric-card">
+                    <div class="label">Organic Keywords</div>
+                    <div class="value">2,607</div>
+                </div>
+                <div class="metric-card">
+                    <div class="label">Organic Traffic</div>
+                    <div class="value accent">~11,128/mo</div>
+                </div>
+                <div class="metric-card">
+                    <div class="label">Traffic Value</div>
+                    <div class="value">~$57,400/mo</div>
+                </div>
+                <div class="metric-card">
+                    <div class="label">Keywords in Top 3</div>
+                    <div class="value">400</div>
+                </div>
+                <div class="metric-card">
+                    <div class="label">Paid Keywords</div>
+                    <div class="value">0</div>
+                </div>
+            </div>
+
+            <!-- Market Footprint -->
+            <div class="footprint">
+                <h3>Local Markets (Dedicated Landing Pages)</h3>
+                <div class="city-tags">
+                    <span class="city-tag">San Jose</span>
+                    <span class="city-tag">Oakland</span>
+                    <span class="city-tag">Fremont</span>
+                    <span class="city-tag">Hayward</span>
+                    <span class="city-tag">Stockton</span>
+                    <span class="city-tag">San Francisco</span>
+                    <span class="city-tag">Fairfield</span>
+                    <span class="city-tag">Walnut Creek</span>
+                    <span class="city-tag">Richmond</span>
+                    <span class="city-tag">Palo Alto</span>
+                    <span class="city-tag">Fresno</span>
+                    <span class="city-tag">Livermore</span>
+                    <span class="city-tag">Elk Grove</span>
+                </div>
+            </div>
+
+            <!-- Top Keywords Table -->
+            <div class="top-kw-section">
+                <h3>Top Traffic-Driving Keywords (PI/Accident)</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Keyword</th>
+                                <th>Position</th>
+                                <th>Volume</th>
+                                <th>Traffic/mo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="kw-cell">car accident lawyer california</td>
+                                <td class="pos-good">2</td>
+                                <td>1,600</td>
+                                <td>591</td>
+                            </tr>
+                            <tr>
+                                <td class="kw-cell">rideshare accident lawyer</td>
+                                <td class="pos-bad">13</td>
+                                <td>23,000</td>
+                                <td>432</td>
+                            </tr>
+                            <tr>
+                                <td class="kw-cell">motorcycle accident attorney</td>
+                                <td class="pos-bad">18</td>
+                                <td>132,000</td>
+                                <td>297</td>
+                            </tr>
+                            <tr>
+                                <td class="kw-cell">california car accident lawyer</td>
+                                <td class="pos-good">3</td>
+                                <td>2,000</td>
+                                <td>294</td>
+                            </tr>
+                            <tr>
+                                <td class="kw-cell">wrongful death attorneys</td>
+                                <td class="pos-bad">13</td>
+                                <td>10,000</td>
+                                <td>167</td>
+                            </tr>
+                            <tr>
+                                <td class="kw-cell">california motorcycle accident lawyer</td>
+                                <td class="pos-good">2</td>
+                                <td>1,100</td>
+                                <td>162</td>
+                            </tr>
+                            <tr>
+                                <td class="kw-cell">auto accident lawyer california</td>
+                                <td class="pos-ok">5</td>
+                                <td>1,100</td>
+                                <td>122</td>
+                            </tr>
+                            <tr>
+                                <td class="kw-cell">california auto accident attorney</td>
+                                <td class="pos-ok">6</td>
+                                <td>1,300</td>
+                                <td>118</td>
+                            </tr>
+                            <tr>
+                                <td class="kw-cell">california car accident attorney</td>
+                                <td class="pos-good">3</td>
+                                <td>800</td>
+                                <td>118</td>
+                            </tr>
+                            <tr>
+                                <td class="kw-cell">wrongful death settlements</td>
+                                <td class="pos-good">4</td>
+                                <td>700</td>
+                                <td>108</td>
+                            </tr>
+                            <tr>
+                                <td class="kw-cell">motorcycle accident attorney california</td>
+                                <td class="pos-good">2</td>
+                                <td>600</td>
+                                <td>103</td>
+                            </tr>
+                            <tr>
+                                <td class="kw-cell">how much to expect from car accident settlement california</td>
+                                <td class="pos-good">1</td>
+                                <td>250</td>
+                                <td>90</td>
+                            </tr>
+                            <tr>
+                                <td class="kw-cell">california truck accident lawyer</td>
+                                <td class="pos-good">4</td>
+                                <td>700</td>
+                                <td>82</td>
+                            </tr>
+                            <tr>
+                                <td class="kw-cell">san jose car accident lawyer</td>
+                                <td class="pos-ok">5</td>
+                                <td>700</td>
+                                <td>68</td>
+                            </tr>
+                            <tr>
+                                <td class="kw-cell">oakland car accident lawyer</td>
+                                <td class="pos-ok">6</td>
+                                <td>400</td>
+                                <td>35</td>
+                            </tr>
+                            <tr>
+                                <td class="kw-cell">fremont car accident lawyer</td>
+                                <td class="pos-good">3</td>
+                                <td>200</td>
+                                <td>32</td>
+                            </tr>
+                            <tr>
+                                <td class="kw-cell">personal injury lawyer fremont</td>
+                                <td class="pos-good">1</td>
+                                <td>200</td>
+                                <td>17</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="callout">
+                    <strong>Key observation:</strong> GJEL's biggest traffic comes from statewide "California" terms, not city-level terms. Their local market positions (San Jose, Oakland) are decent but not dominant (positions 5-10 for most city keywords).
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TIER 1 -->
+    <div class="container">
+        <div class="section">
+            <span class="section-label tier-1">Tier 1</span>
+            <h2>Direct NorCal Competitors</h2>
+            <p class="section-desc">Firms actually competing head-to-head with GJEL for PI/accident traffic in Northern California markets.</p>
+
+            <!-- Walkup -->
+            <div class="competitor-card">
+                <div class="competitor-header">
+                    <div>
+                        <div class="competitor-name">1. Walkup Law Office</div>
+                        <div class="competitor-url">walkuplawoffice.com</div>
+                    </div>
+                    <span class="competitor-tag tag-danger">TOP THREAT</span>
+                </div>
+
+                <div class="competitor-metrics">
+                    <div class="comp-metric">
+                        <div class="label">Organic Traffic</div>
+                        <div class="value">12,268/mo</div>
+                    </div>
+                    <div class="comp-metric">
+                        <div class="label">Traffic Value</div>
+                        <div class="value">$312,385/mo</div>
+                    </div>
+                    <div class="comp-metric">
+                        <div class="label">Keywords</div>
+                        <div class="value">1,266</div>
+                    </div>
+                    <div class="comp-metric">
+                        <div class="label">In Top 3</div>
+                        <div class="value">272</div>
+                    </div>
+                    <div class="comp-metric">
+                        <div class="label">Common KWs</div>
+                        <div class="value">155</div>
+                    </div>
+                    <div class="comp-metric">
+                        <div class="label">DR</div>
+                        <div class="value">44</div>
+                    </div>
+                </div>
+
+                <div class="markets-label">Markets</div>
+                <div class="markets-list">
+                    <span class="market-tag">San Francisco</span>
+                    <span class="market-tag">Sacramento</span>
+                    <span class="market-tag">San Jose</span>
+                    <span class="market-tag">Bay Area</span>
+                    <span class="market-tag">Palo Alto</span>
+                    <span class="market-tag">Napa</span>
+                    <span class="market-tag">Truckee</span>
+                    <span class="market-tag">Fresno</span>
+                </div>
+
+                <h4 style="margin-bottom: 12px;">Where they beat GJEL:</h4>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Keyword</th>
+                                <th>Walkup</th>
+                                <th>GJEL</th>
+                                <th>Volume</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="kw-cell">personal injury attorney san francisco</td>
+                                <td class="pos-good">2</td>
+                                <td class="pos-none">not ranking</td>
+                                <td>1,000</td>
+                            </tr>
+                            <tr>
+                                <td class="kw-cell">san jose personal injury attorney</td>
+                                <td class="pos-good">2</td>
+                                <td class="pos-bad">9</td>
+                                <td>500</td>
+                            </tr>
+                            <tr>
+                                <td class="kw-cell">sacramento truck accident lawyer</td>
+                                <td class="pos-good">2</td>
+                                <td class="pos-none">not ranking</td>
+                                <td>800</td>
+                            </tr>
+                            <tr>
+                                <td class="kw-cell">sacramento motorcycle accident attorney</td>
+                                <td class="pos-good">2</td>
+                                <td class="pos-none">not ranking</td>
+                                <td>600</td>
+                            </tr>
+                            <tr>
+                                <td class="kw-cell">california wrongful death attorney</td>
+                                <td class="pos-good">1</td>
+                                <td class="pos-bad">17</td>
+                                <td>400</td>
+                            </tr>
+                            <tr>
+                                <td class="kw-cell">san francisco car accident attorney</td>
+                                <td class="pos-good">3</td>
+                                <td class="pos-none">not ranking</td>
+                                <td>700</td>
+                            </tr>
+                            <tr>
+                                <td class="kw-cell">bay area personal injury attorney</td>
+                                <td class="pos-good">1</td>
+                                <td class="pos-none">not ranking</td>
+                                <td>200</td>
+                            </tr>
+                            <tr>
+                                <td class="kw-cell">san francisco wrongful death lawyer</td>
+                                <td class="pos-good">1</td>
+                                <td class="pos-none">not ranking</td>
+                                <td>150</td>
+                            </tr>
+                            <tr>
+                                <td class="kw-cell">wrongful death attorney ca</td>
+                                <td class="pos-ok">5</td>
+                                <td class="pos-ok">6</td>
+                                <td>200</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="analysis-box">
+                    Walkup is the most dangerous NorCal competitor. They dominate San Francisco PI (GJEL barely competes there), own Sacramento truck/motorcycle accident terms, rank #2 for San Jose personal injury (GJEL is #9), and hold "California wrongful death attorney" at #1 while GJEL sits at #17. Their traffic value ($312K) is <strong>5x GJEL's</strong> despite similar traffic numbers, meaning they rank for much higher-value keywords in the right cities.
+                </div>
+            </div>
+
+            <!-- AutoAccident.com -->
+            <div class="competitor-card">
+                <div class="competitor-header">
+                    <div>
+                        <div class="competitor-name">2. AutoAccident.com (Ed Smith Law)</div>
+                        <div class="competitor-url">autoaccident.com</div>
+                    </div>
+                    <span class="competitor-tag tag-danger">SACRAMENTO KING</span>
+                </div>
+
+                <div class="competitor-metrics">
+                    <div class="comp-metric">
+                        <div class="label">Organic Traffic</div>
+                        <div class="value">12,492/mo</div>
+                    </div>
+                    <div class="comp-metric">
+                        <div class="label">Traffic Value</div>
+                        <div class="value">$164,235/mo</div>
+                    </div>
+                    <div class="comp-metric">
+                        <div class="label">Keywords</div>
+                        <div class="value">2,251</div>
+                    </div>
+                    <div class="comp-metric">
+                        <div class="label">In Top 3</div>
+                        <div class="value">275</div>
+                    </div>
+                    <div class="comp-metric">
+                        <div class="label">Common KWs</div>
+                        <div class="value">193</div>
+                    </div>
+                    <div class="comp-metric">
+                        <div class="label">DR</div>
+                        <div class="value">46</div>
+                    </div>
+                </div>
+
+                <div class="markets-label">Markets</div>
+                <div class="markets-list">
+                    <span class="market-tag">Sacramento</span>
+                    <span class="market-tag">Oakland</span>
+                    <span class="market-tag">Stockton</span>
+                    <span class="market-tag">Fresno</span>
+                    <span class="market-tag">Napa</span>
+                    <span class="market-tag">Modesto</span>
+                    <span class="market-tag">Merced</span>
+                    <span class="market-tag">Elk Grove</span>
+                    <span class="market-tag">Truckee</span>
+                    <span class="market-tag">Redding</span>
+                    <span class="market-tag">Eureka</span>
+                    <span class="market-tag">Brentwood</span>
+                    <span class="market-tag">Citrus Heights</span>
+                    <span class="market-tag">Roseville</span>
+                    <span class="market-tag">Ventura</span>
+                    <span class="market-tag">CA Statewide</span>
+                </div>
+
+                <h4 style="margin-bottom: 12px;">Where they beat GJEL:</h4>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Keyword</th>
+                                <th>AutoAccident</th>
+                                <th>GJEL</th>
+                                <th>Volume</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="kw-cell">auto accident attorney (national)</td>
+                                <td class="pos-bad">10</td>
+                                <td class="pos-none">not ranking</td>
+                                <td>76,000</td>
+                            </tr>
+                            <tr>
+                                <td class="kw-cell">sacramento car accident lawyer</td>
+                                <td class="pos-good">2</td>
+                                <td class="pos-none">not ranking</td>
+                                <td>1,700</td>
+                            </tr>
+                            <tr>
+                                <td class="kw-cell">car accident lawyer california</td>
+                                <td class="pos-bad">8</td>
+                                <td class="pos-good">2</td>
+                                <td>1,600</td>
+                            </tr>
+                            <tr>
+                                <td class="kw-cell">auto accident law firm</td>
+                                <td class="pos-ok">5</td>
+                                <td class="pos-none">not ranking</td>
+                                <td>4,500</td>
+                            </tr>
+                            <tr>
+                                <td class="kw-cell">fresno motorcycle accident lawyer</td>
+                                <td class="pos-ok">5</td>
+                                <td class="pos-bad">15</td>
+                                <td>900</td>
+                            </tr>
+                            <tr>
+                                <td class="kw-cell">sacramento truck accident attorney</td>
+                                <td class="pos-ok">6</td>
+                                <td class="pos-none">not ranking</td>
+                                <td>600</td>
+                            </tr>
+                            <tr>
+                                <td class="kw-cell">oakland car accident lawyer</td>
+                                <td class="pos-bad">8</td>
+                                <td class="pos-ok">6</td>
+                                <td>400</td>
+                            </tr>
+                            <tr>
+                                <td class="kw-cell">stockton car accident attorney</td>
+                                <td class="pos-ok">6</td>
+                                <td class="pos-bad">12</td>
+                                <td>400</td>
+                            </tr>
+                            <tr>
+                                <td class="kw-cell">sacramento bicycle accident lawyer</td>
+                                <td class="pos-ok">7</td>
+                                <td class="pos-none">not ranking</td>
+                                <td>800</td>
+                            </tr>
+                            <tr>
+                                <td class="kw-cell">napa car accident lawyer</td>
+                                <td class="pos-good">2</td>
+                                <td class="pos-none">not ranking</td>
+                                <td>200</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="analysis-box">
+                    AutoAccident.com owns Sacramento and has the deepest NorCal city coverage of any competitor. They rank in <strong>17+ NorCal cities</strong> compared to GJEL's ~13. GJEL only beats them on statewide California terms. AutoAccident pulls ~1,395 visits/mo from the national "auto accident attorney" keyword alone (76K volume at position 10), plus ~373 from "sacramento car accident lawyer." Their exact-match domain gives them an edge on "auto accident" variants. They also cover cities GJEL completely misses: Napa, Merced, Truckee, Redding, Eureka, Brentwood, Citrus Heights, and Roseville.
+                </div>
+            </div>
+
+            <!-- Dolan Law -->
+            <div class="competitor-card">
+                <div class="competitor-header">
+                    <div>
+                        <div class="competitor-name">3. Dolan Law Firm</div>
+                        <div class="competitor-url">dolanlawfirm.com</div>
+                    </div>
+                    <span class="competitor-tag tag-warning">SF SPECIALIST</span>
+                </div>
+
+                <div class="competitor-metrics">
+                    <div class="comp-metric">
+                        <div class="label">Organic Traffic</div>
+                        <div class="value">7,452/mo</div>
+                    </div>
+                    <div class="comp-metric">
+                        <div class="label">Traffic Value</div>
+                        <div class="value">$98,341/mo</div>
+                    </div>
+                    <div class="comp-metric">
+                        <div class="label">Keywords</div>
+                        <div class="value">1,223</div>
+                    </div>
+                    <div class="comp-metric">
+                        <div class="label">In Top 3</div>
+                        <div class="value">261</div>
+                    </div>
+                    <div class="comp-metric">
+                        <div class="label">Common KWs</div>
+                        <div class="value">124</div>
+                    </div>
+                    <div class="comp-metric">
+                        <div class="label">DR</div>
+                        <div class="value">43</div>
+                    </div>
+                </div>
+
+                <div class="markets-label">Markets</div>
+                <div class="markets-list">
+                    <span class="market-tag">San Francisco</span>
+                    <span class="market-tag">Bay Area</span>
+                    <span class="market-tag">Oakland</span>
+                    <span class="market-tag">Los Angeles (expanding)</span>
+                </div>
+
+                <h4 style="margin-bottom: 12px;">Where they beat GJEL:</h4>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Keyword</th>
+                                <th>Dolan</th>
+                                <th>GJEL</th>
+                                <th>Volume</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="kw-cell">car accident lawyer san francisco</td>
+                                <td class="pos-good">2</td>
+                                <td class="pos-none">not ranking</td>
+                                <td>800</td>
+                            </tr>
+                            <tr>
+                                <td class="kw-cell">san francisco car accident attorney</td>
+                                <td class="pos-good">2</td>
+                                <td class="pos-none">not ranking</td>
+                                <td>700</td>
+                            </tr>
+                            <tr>
+                                <td class="kw-cell">san francisco motorcycle accident attorney</td>
+                                <td class="pos-good">2</td>
+                                <td class="pos-none">not ranking</td>
+                                <td>300</td>
+                            </tr>
+                            <tr>
+                                <td class="kw-cell">san francisco auto accident lawyer</td>
+                                <td class="pos-good">1</td>
+                                <td class="pos-none">not ranking</td>
+                                <td>400</td>
+                            </tr>
+                            <tr>
+                                <td class="kw-cell">california bicycle accident lawyer</td>
+                                <td class="pos-good">2</td>
+                                <td class="pos-none">not ranking well</td>
+                                <td>250</td>
+                            </tr>
+                            <tr>
+                                <td class="kw-cell">car accident attorney bay area</td>
+                                <td class="pos-good">2</td>
+                                <td class="pos-none">not ranking</td>
+                                <td>150</td>
+                            </tr>
+                            <tr>
+                                <td class="kw-cell">california motorcycle accident attorney</td>
+                                <td class="pos-good">3</td>
+                                <td class="pos-good">2</td>
+                                <td>450</td>
+                            </tr>
+                            <tr>
+                                <td class="kw-cell">motorcycle accident attorney california</td>
+                                <td class="pos-good">4</td>
+                                <td class="pos-good">2</td>
+                                <td>600</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="analysis-box">
+                    Dolan owns San Francisco car accident and motorcycle accident keywords. GJEL has almost zero SF presence for these terms despite having an SF city page. Where GJEL and Dolan directly clash is on statewide California motorcycle accident terms, where GJEL holds position 2 vs Dolan at 3-4. Dolan is also expanding into LA, which dilutes their NorCal focus and potentially creates an opening for GJEL in SF.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TIER 2 -->
+    <div class="container">
+        <div class="section">
+            <span class="section-label tier-2">Tier 2</span>
+            <h2>California-Wide Firms</h2>
+            <p class="section-desc">Based outside NorCal but competing heavily on the same "California [practice area]" keywords that drive GJEL's traffic.</p>
+
+            <div class="t2-grid">
+                <div class="t2-card">
+                    <h4>4. Omega Law Group</h4>
+                    <div class="t2-url">omegalaw.com</div>
+                    <div class="t2-stats">
+                        <div class="t2-stat">Traffic: <span>43,804/mo</span></div>
+                        <div class="t2-stat">Common KWs: <span>269</span></div>
+                        <div class="t2-stat">KW Share: <span>3.1%</span></div>
+                        <div class="t2-stat">DR: <span>40</span></div>
+                    </div>
+                    <p>LA-based firm with 4x GJEL's traffic. The 3.1% keyword share is the highest of any competitor, meaning they fight on the same types of terms more than anyone else. They likely dominate statewide California PI terms and high-volume national terms.</p>
+                </div>
+
+                <div class="t2-card">
+                    <h4>5. Singleton Schreiber</h4>
+                    <div class="t2-url">singletonschreiber.com</div>
+                    <div class="t2-stats">
+                        <div class="t2-stat">Traffic: <span>47,617/mo</span></div>
+                        <div class="t2-stat">Common KWs: <span>134</span></div>
+                        <div class="t2-stat">KW Share: <span>2.0%</span></div>
+                        <div class="t2-stat">DR: <span>56</span></div>
+                    </div>
+                    <p>San Diego-based firm aggressively expanding into all California markets. 4x GJEL's traffic. Their content strategy is generating serious organic traffic, and they're likely competing on both statewide California terms and increasingly on NorCal city-level terms.</p>
+                </div>
+
+                <div class="t2-card">
+                    <h4>6. Dominguez Firm</h4>
+                    <div class="t2-url">dominguezfirm.com</div>
+                    <div class="t2-stats">
+                        <div class="t2-stat">Traffic: <span>77,747/mo</span></div>
+                        <div class="t2-stat">Common KWs: <span>200</span></div>
+                        <div class="t2-stat">KW Share: <span>2.8%</span></div>
+                        <div class="t2-stat">DR: <span>47</span></div>
+                    </div>
+                    <p>LA-based firm with 7x GJEL's traffic. High keyword overlap on California statewide terms. Primarily a SoCal threat but their sheer volume means they compete on any "California" prefixed keyword.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TIER 3 -->
+    <div class="container">
+        <div class="section">
+            <span class="section-label tier-3">Tier 3</span>
+            <h2>National Firms (Context Only)</h2>
+            <p class="section-desc">Not direct NorCal competitors, but rank on national head terms that overlap with GJEL's keyword portfolio.</p>
+
+            <div class="table-wrap t3-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Firm</th>
+                            <th>Traffic</th>
+                            <th>Common KWs</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Morgan & Morgan</strong></td>
+                            <td>1,073,643/mo</td>
+                            <td>489</td>
+                            <td class="kw-cell">National firm, not a direct NorCal competitor but ranks on all national head terms</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ben Crump</strong></td>
+                            <td>429,926/mo</td>
+                            <td>436</td>
+                            <td class="kw-cell">National, competes on generic terms</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Munley Law</strong></td>
+                            <td>168,028/mo</td>
+                            <td>193</td>
+                            <td class="kw-cell">PA-based, competes on national/informational terms</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Morris Bart</strong></td>
+                            <td>80,034/mo</td>
+                            <td>190</td>
+                            <td class="kw-cell">Southeast US, minimal NorCal overlap</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Competitive Gaps & Strengths -->
+    <div class="container">
+        <div class="section">
+            <span class="section-label gaps">Competitive Gaps</span>
+            <h2>Where GJEL Is Getting Beaten or Is Absent</h2>
+            <p class="section-desc">Markets and keywords where competitors outrank GJEL or where GJEL has no presence at all.</p>
+
+            <div class="summary-grid">
+                <div class="gap-card">
+                    <h4>San Francisco</h4>
+                    <p>Dolan (#1-2) and Walkup (#2-4) own this market. GJEL barely registers despite having an SF page.</p>
+                </div>
+                <div class="gap-card">
+                    <h4>Sacramento</h4>
+                    <p>AutoAccident.com dominates completely. Walkup is #2 for truck/motorcycle. GJEL only captures Sacramento traffic through blog posts about local accidents, not service pages.</p>
+                </div>
+                <div class="gap-card">
+                    <h4>"Bay Area" Keywords</h4>
+                    <p>Walkup (#1-3) and Dolan (#1-3) own "bay area personal injury attorney/lawyer" and similar. GJEL doesn't target these terms at all.</p>
+                </div>
+                <div class="gap-card">
+                    <h4>Missing City Markets</h4>
+                    <p>AutoAccident.com covers Napa, Truckee, Redding, Eureka, Merced, Citrus Heights, Roseville, and Brentwood. GJEL has no presence in any of them.</p>
+                </div>
+                <div class="gap-card">
+                    <h4>"California Wrongful Death Attorney/Lawyer"</h4>
+                    <p>Walkup is #1, GJEL is #17. This is a high-value keyword (1,400 volume) where GJEL is underperforming despite strong wrongful death settlement content.</p>
+                </div>
+                <div class="gap-card">
+                    <h4>San Jose</h4>
+                    <p>GJEL ranks #5-10 for most San Jose terms. Walkup is #2 for "san jose personal injury attorney." Neither firm dominates, but GJEL should own this market given their office location.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <span class="section-label strengths">Strengths</span>
+            <h2>Where GJEL Is Strong</h2>
+
+            <div class="summary-grid">
+                <div class="strength-card">
+                    <h4>Statewide "California Car Accident Lawyer"</h4>
+                    <p>Position 2-3 for most variants of this high-volume keyword cluster.</p>
+                </div>
+                <div class="strength-card">
+                    <h4>Statewide Motorcycle Accident</h4>
+                    <p>Position 2-3 for California motorcycle terms, beating most NorCal competitors.</p>
+                </div>
+                <div class="strength-card">
+                    <h4>Wrongful Death Settlement Queries</h4>
+                    <p>Position 1-4 for most "how much" and "average settlement" informational queries.</p>
+                </div>
+                <div class="strength-card">
+                    <h4>Settlement Calculators</h4>
+                    <p>Unique asset driving traffic: brain injury, herniated disc, bicycle, truck, bus, and eye injury calculators.</p>
+                </div>
+                <div class="strength-card">
+                    <h4>Fremont</h4>
+                    <p>Only local market where GJEL is position 1-3 consistently.</p>
+                </div>
+                <div class="strength-card">
+                    <h4>Spanish-Language Content</h4>
+                    <p>Unique among competitors, driving incremental traffic.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Final Rankings -->
+    <div class="container">
+        <div class="section">
+            <h2>Top Competitors Ranked by NorCal Threat Level</h2>
+            <p class="section-desc">Firms ranked by how much they threaten GJEL's organic visibility in Northern California PI markets.</p>
+
+            <div class="rank-table">
+                <div class="rank-row">
+                    <div class="rank-num">1</div>
+                    <div class="rank-info">
+                        <div class="firm-name">Walkup Law Office</div>
+                        <div class="firm-reason">Owns SF, strong in Sacramento, Bay Area, San Jose. Most diversified NorCal presence. Traffic value 5x GJEL's.</div>
+                    </div>
+                </div>
+                <div class="rank-row">
+                    <div class="rank-num">2</div>
+                    <div class="rank-info">
+                        <div class="firm-name">AutoAccident.com (Ed Smith Law)</div>
+                        <div class="firm-reason">Owns Sacramento, deepest NorCal city coverage (17+ cities), similar traffic to GJEL.</div>
+                    </div>
+                </div>
+                <div class="rank-row">
+                    <div class="rank-num">3</div>
+                    <div class="rank-info">
+                        <div class="firm-name">Dolan Law Firm</div>
+                        <div class="firm-reason">Owns SF car accident, Bay Area terms. Expanding but still concentrated in SF.</div>
+                    </div>
+                </div>
+                <div class="rank-row">
+                    <div class="rank-num">4</div>
+                    <div class="rank-info">
+                        <div class="firm-name">Omega Law Group</div>
+                        <div class="firm-reason">Highest keyword overlap with GJEL (3.1%), 4x traffic. Competing on statewide CA terms.</div>
+                    </div>
+                </div>
+                <div class="rank-row">
+                    <div class="rank-num">5</div>
+                    <div class="rank-info">
+                        <div class="firm-name">Singleton Schreiber</div>
+                        <div class="firm-reason">Aggressively expanding from SoCal, 4x traffic, growing NorCal presence.</div>
+                    </div>
+                </div>
+                <div class="rank-row">
+                    <div class="rank-num">6</div>
+                    <div class="rank-info">
+                        <div class="firm-name">Dominguez Firm</div>
+                        <div class="firm-reason">7x GJEL's traffic, high overlap on California-wide terms.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="footer">
+            <p>GJEL.com SEO Competitive Analysis &middot; Prepared March 19, 2026 &middot; <a href="https://jurisdigital.pro">JurisDigital</a></p>
+        </div>
+    </div>
+
+</body>
+</html>
