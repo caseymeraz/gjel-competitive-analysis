@@ -6,27 +6,29 @@
     <title>GJEL.com SEO Competitive Analysis | Northern California PI Market</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #0f1117;
-            --surface: #1a1d27;
-            --surface-2: #232734;
-            --border: #2e3348;
-            --text: #e4e6ef;
-            --text-muted: #9298b4;
-            --accent: #6366f1;
-            --accent-light: #818cf8;
-            --green: #22c55e;
-            --green-bg: rgba(34, 197, 94, 0.1);
-            --red: #ef4444;
-            --red-bg: rgba(239, 68, 68, 0.1);
-            --yellow: #eab308;
-            --yellow-bg: rgba(234, 179, 8, 0.1);
-            --orange: #f97316;
-            --orange-bg: rgba(249, 115, 22, 0.1);
-            --blue: #3b82f6;
-            --blue-bg: rgba(59, 130, 246, 0.1);
+            --bg: #ffffff;
+            --surface: #f7f8fa;
+            --surface-2: #f0f1f4;
+            --border: #e2e4ea;
+            --text: #222222;
+            --text-muted: #5f6577;
+            --accent: #14EEEE;
+            --accent-dark: #0cc;
+            --brand-green: #6FFF2C;
+            --gradient: linear-gradient(135deg, #6FFF2C, #14EEEE);
+            --green: #16a34a;
+            --green-bg: rgba(22, 163, 74, 0.08);
+            --red: #dc2626;
+            --red-bg: rgba(220, 38, 38, 0.06);
+            --yellow: #b45309;
+            --yellow-bg: rgba(180, 83, 9, 0.06);
+            --orange: #c2410c;
+            --orange-bg: rgba(194, 65, 12, 0.06);
+            --blue: #0891b2;
+            --blue-bg: rgba(8, 145, 178, 0.06);
         }
 
         * {
@@ -36,7 +38,7 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
             background: var(--bg);
             color: var(--text);
             line-height: 1.6;
@@ -55,10 +57,21 @@
             border-bottom: 1px solid var(--border);
         }
 
+        .hero-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 32px;
+        }
+
+        .hero-logo {
+            height: 32px;
+        }
+
         .hero-badge {
             display: inline-block;
-            background: var(--accent);
-            color: white;
+            background: var(--gradient);
+            color: #222222;
             font-size: 11px;
             font-weight: 700;
             letter-spacing: 1.5px;
@@ -88,6 +101,13 @@
             margin-top: 12px;
         }
 
+        /* Gradient accent bar */
+        .gradient-bar {
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+
         /* Baseline Section */
         .baseline {
             padding: 48px 0;
@@ -106,6 +126,11 @@
             border: 1px solid var(--border);
             border-radius: 12px;
             padding: 24px;
+            border-top: 3px solid transparent;
+            border-image: var(--gradient) 1;
+            border-image-slice: 1 1 0 1;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
         }
 
         .metric-card .label {
@@ -124,7 +149,7 @@
         }
 
         .metric-card .value.accent {
-            color: var(--accent-light);
+            color: var(--accent-dark);
         }
 
         /* Section Styles */
@@ -164,8 +189,8 @@
         }
 
         .section-label.gaps {
-            background: var(--blue-bg);
-            color: var(--blue);
+            background: var(--red-bg);
+            color: var(--red);
         }
 
         .section-label.strengths {
@@ -218,7 +243,7 @@
 
         .competitor-url {
             font-size: 14px;
-            color: var(--accent-light);
+            color: var(--accent-dark);
             font-weight: 500;
         }
 
@@ -253,7 +278,8 @@
         }
 
         .comp-metric {
-            background: var(--surface-2);
+            background: var(--bg);
+            border: 1px solid var(--border);
             border-radius: 8px;
             padding: 16px;
         }
@@ -292,7 +318,7 @@
             font-size: 12px;
             font-weight: 500;
             padding: 4px 10px;
-            background: var(--surface-2);
+            background: var(--bg);
             border: 1px solid var(--border);
             border-radius: 6px;
             color: var(--text-muted);
@@ -334,7 +360,7 @@
         }
 
         tr:hover td {
-            background: rgba(99, 102, 241, 0.04);
+            background: rgba(20, 238, 238, 0.04);
         }
 
         .pos-good {
@@ -438,8 +464,11 @@
         .rank-num {
             font-size: 24px;
             font-weight: 800;
-            color: var(--accent-light);
             min-width: 32px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .rank-info {
@@ -468,17 +497,17 @@
 
         /* Observation Callout */
         .callout {
-            background: var(--yellow-bg);
-            border: 1px solid rgba(234, 179, 8, 0.2);
+            background: rgba(20, 238, 238, 0.06);
+            border: 1px solid rgba(20, 238, 238, 0.2);
             border-radius: 10px;
             padding: 16px 20px;
             margin-top: 24px;
             font-size: 14px;
-            color: var(--yellow);
+            color: var(--text-muted);
         }
 
         .callout strong {
-            color: var(--yellow);
+            color: var(--text);
         }
 
         /* Market footprint */
@@ -503,10 +532,10 @@
             font-size: 13px;
             font-weight: 500;
             padding: 6px 14px;
-            background: var(--accent);
-            background: rgba(99, 102, 241, 0.15);
-            color: var(--accent-light);
+            background: rgba(20, 238, 238, 0.1);
+            color: var(--accent-dark);
             border-radius: 8px;
+            border: 1px solid rgba(20, 238, 238, 0.2);
         }
 
         /* Tier 2 compact cards */
@@ -531,7 +560,7 @@
 
         .t2-card .t2-url {
             font-size: 13px;
-            color: var(--accent-light);
+            color: var(--accent-dark);
             margin-bottom: 12px;
         }
 
@@ -570,11 +599,14 @@
             text-align: center;
             color: var(--text-muted);
             font-size: 13px;
+            border-top: 3px solid;
+            border-image: var(--gradient) 1;
         }
 
         .footer a {
-            color: var(--accent-light);
+            color: var(--accent-dark);
             text-decoration: none;
+            font-weight: 600;
         }
 
         /* Responsive */
@@ -606,10 +638,19 @@
     <!-- Hero -->
     <div class="container">
         <div class="hero">
-            <span class="hero-badge">SEO Competitive Analysis</span>
-            <h1>GJEL.com</h1>
-            <p class="subtitle">Northern California Personal Injury Market</p>
-            <p class="date">March 19, 2026</p>
+            <div class="hero-top">
+                <div>
+                    <span class="hero-badge">SEO Competitive Analysis</span>
+                    <h1>GJEL.com</h1>
+                    <p class="subtitle">Northern California Personal Injury Market</p>
+                    <p class="date">March 19, 2026</p>
+                </div>
+                <svg width="180" height="40" viewBox="0 0 180 40" xmlns="http://www.w3.org/2000/svg">
+                    <text x="0" y="30" font-family="'Be Vietnam Pro', sans-serif" font-size="24" font-weight="800" fill="#222222">Juris</text>
+                    <text x="62" y="30" font-family="'Be Vietnam Pro', sans-serif" font-size="24" font-weight="400" fill="#222222">Digital</text>
+                </svg>
+            </div>
+            <div class="gradient-bar"></div>
         </div>
     </div>
 
@@ -1237,7 +1278,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong>Morgan & Morgan</strong></td>
+                            <td><strong>Morgan &amp; Morgan</strong></td>
                             <td>1,073,643/mo</td>
                             <td>489</td>
                             <td class="kw-cell">National firm, not a direct NorCal competitor but ranks on all national head terms</td>
@@ -1391,7 +1432,7 @@
 
     <div class="container">
         <div class="footer">
-            <p>GJEL.com SEO Competitive Analysis &middot; Prepared March 19, 2026 &middot; <a href="https://jurisdigital.pro">JurisDigital</a></p>
+            <p>GJEL.com SEO Competitive Analysis &middot; Prepared March 19, 2026 &middot; <a href="https://jurisdigital.com">Juris Digital</a></p>
         </div>
     </div>
 
