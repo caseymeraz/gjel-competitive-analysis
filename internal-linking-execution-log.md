@@ -89,3 +89,31 @@ whose fields are not exposed to the REST API. Edit in wp-admin:
 2. **Upgrade bare-city anchors** on `/car-accident-lawyers`, `/personal-injury-attorneys`,
    `/hit-run-attorney`: "Oakland" → "Oakland car accident lawyers" etc. (hubs stay the target —
    the hubs ARE the city car-accident/PI pages).
+
+---
+
+# Round 3 — /san-francisco Phase 1 Corrections (July 15, 2026)
+
+Executes Phase 1 of `sf-verification-and-plan.md` on WP page 3979 via REST. All changes
+live-verified (11/11 checks). Backup: `wp_backups3.json` (scratchpad) + WP revision.
+
+| Fix | Change |
+|---|---|
+| Statute | Veh. Code §§17707/17708 (minor-driver liability, wrong context) replaced with Ins. Code §11580.2 in the UM/UIM section |
+| Crash reporting | "Call police even for minor accidents" replaced with accurate SFPD report criteria (injury / hit-and-run / DUI) + DMV SR-1 requirement (10 days; injury, death, or $1,000+ damage) |
+| Statute of limitations | Categorical body sentence now qualified: §335.1, exceptions, six-month government/Muni claim note (matches FAQs) |
+| Typos | "suffering.With", "blame.If", "stops.Market" — spaces restored |
+| Citation | "Vision Zero and SWITRS crash data" link repointed from the SFMTA program page to the DataSF "Traffic Crashes Resulting in Injury" dataset |
+
+**Attorney review recommended** for the statute and SR-1 wording (both are now accurate but
+were drafted by the SEO process, not counsel).
+
+## Not editable via REST (template/widget/plugin — manual list)
+- "Don't Face This AloneGet…" heading typo — template widget.
+- Two different 866 numbers + 73-review widget — template-driven; normalize in theme/widget.
+- `/san-francisco-2` entries on `/sitemap` and `/sitemap-2` — pages are shortcode-generated;
+  the stale entry must be cleared in the sitemap plugin/redirect record.
+
+## Next per plan: Phase 2 (build /san-francisco/car-accident-lawyers), Phase 3 (refocus hub
+as PI page), Phase 4 (anchor rewiring incl. nav "San Francisco Personal Injury Attorneys" →
+/san-francisco).
