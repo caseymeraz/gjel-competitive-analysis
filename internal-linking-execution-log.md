@@ -52,3 +52,40 @@ confirmed present in the rendered HTML: **21/21 live**.
 3. **Sitemap:** 238 redirecting URLs in the Rank Math post sitemaps.
 4. **GSC:** request indexing for both target pages + both city hubs.
 5. Revoke/rotate the application password used for this run (Users → Profile → Application Passwords).
+
+---
+
+# Round 2 — City Hub Anchor Cleanup (July 15, 2026)
+
+Follow-up to the city-hub inlink evaluation (`data/city-hub-inlink-evaluation.csv`).
+
+## Executed: 34 settlement-calculator pages fixed
+
+Every calculator page's closing CTA linked a city hub with the anchor "office location",
+"office", "nearest office", or (twice) an empty anchor — 34 links total (17 → /oakland,
+17 → /san-francisco). Each was rewritten via the REST API to:
+
+> "…visit our **[Oakland|San Francisco] personal injury office** or contact us at…"
+
+Also cleaned up while in there: stray whitespace-only duplicate links to the hubs and
+`/locations` that sat next to the real links (the two "[empty]" anchors from the evaluation),
+and a missing-space typo the old markup caused ("officeor").
+
+All 34 pages live-verified post-update: new city anchors render, no weak anchors remain.
+Backups in session scratchpad (`wp_backups2.json`) + WordPress revisions per page.
+
+## Not executable via REST — needs page-builder/theme access
+
+These pages store content in ACF fields with custom PHP templates (`page-template-case-ind.php`),
+whose fields are not exposed to the REST API. Edit in wp-admin:
+
+1. **Repoint 6 links to city child pages** (from the evaluation's REPOINT rows):
+   - `/california-bicycle-accident-lawyers`: "San Jose" → `/san-jose/bicycle-accident-lawyers`,
+     "Oakland" → `/oakland/bicycle-accident-lawyers`, "San Francisco" → `/san-francisco/bicycle-accident-lawyers`
+     (anchor: "{City} bicycle accident lawyers")
+   - `/motorcycle-accident-lawyers`: "San Jose" → `/san-jose/motorcycle-accident-lawyers`,
+     "Oakland" → `/oakland/motorcycle-accidents`, "San Francisco" → `/san-francisco/motorcycle-accidents`
+     (anchor: "{City} motorcycle accident lawyers")
+2. **Upgrade bare-city anchors** on `/car-accident-lawyers`, `/personal-injury-attorneys`,
+   `/hit-run-attorney`: "Oakland" → "Oakland car accident lawyers" etc. (hubs stay the target —
+   the hubs ARE the city car-accident/PI pages).
