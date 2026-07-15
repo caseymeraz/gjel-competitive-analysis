@@ -117,3 +117,57 @@ were drafted by the SEO process, not counsel).
 ## Next per plan: Phase 2 (build /san-francisco/car-accident-lawyers), Phase 3 (refocus hub
 as PI page), Phase 4 (anchor rewiring incl. nav "San Francisco Personal Injury Attorneys" →
 /san-francisco).
+
+---
+
+# Round 4 — San Francisco Split Executed (July 15, 2026)
+
+Phases 2–4 of `sf-verification-and-plan.md`, executed via WP REST (user-authorized,
+including redirect-rule management).
+
+## New page: https://www.gjel.com/san-francisco/car-accidents (WP page 22040) — LIVE
+- 4 venue-labeled case results with links: $285K Golden Gate Park/SF pedestrian UM case;
+  $1M rush-hour chain-reaction (Andy Gillin personally); $300K Oakland (managing attorney
+  Andy Gillin); I-80 Richmond policy limits (Gillin & Larsen). All facts sourced from the
+  case pages on the site.
+- Andy Gillin attorney section (links /andrew-gillin), corrected SFPD/SR-1 guidance,
+  Ins. Code §11580.2 UM/UIM, comparative fault, Muni six-month claim, focused car FAQ,
+  links to hub + 5 SF child pages + statewide page.
+- "Where Car Accidents Happen Most in San Francisco" section (with DataSF citation)
+  moved here from the hub.
+- SEO title set via Rank Math meta: "San Francisco Car Accident Lawyers | GJEL Attorneys".
+
+**URL note:** the planned `/san-francisco/car-accident-lawyers` path is held by a Rank Math
+redirect that survived two API deletions (API reported success; `x-redirect-by: Rank Math`
+persisted). The page shipped at `/san-francisco/car-accidents` instead — which matches the
+site's naming family (`/oakland/motorcycle-accidents`, `/san-francisco/truck-accident`).
+**Manual item:** in Rank Math → Redirections, find the rule for
+`san-francisco/car-accident-lawyers` and repoint it to `/san-francisco/car-accidents`
+(currently it dumps to the hub).
+
+## Hub refocused: /san-francisco (page 3979)
+- Title/H1/SEO title now "San Francisco Personal Injury Lawyers | GJEL Attorneys".
+- Removed 7 car-specific sections (~21,300 chars, ~36%): post-crash steps, legal rights,
+  car types, where-crashes-happen (moved), duplicate damages, duplicate process, car FAQ.
+- Added "Hurt in a Car Accident in San Francisco?" bridge section linking the car page.
+- Kept: results, attorneys, PI cases, claim process, comparative fault, damages,
+  local-knowledge section, PI FAQ, office/contact blocks. Live-verified 12/12 checks.
+
+## Internal links to the car page: 6 live + hub bridge
+Added closing in-content links on: /san-francisco/what-to-do-after-accidents,
+/archives/the-dos-and-donts…, /archives/the-most-common-types…,
+/blog/san-francisco-cable-car-accident…, /san-francisco/fatal-car-accidents,
+/san-francisco/bicycle-accident-lawyers. Two more (rear-end-accidents,
+link-between-speeding) saved to post content but their templates render an ACF field —
+front-end doesn't show them (manual item).
+
+## Backups
+wp_backups4.json (hub + car pre-surgery), wp_backups5.json (8 link sources) + WP revisions.
+
+## Remaining manual items for this workstream
+1. Rank Math → Redirections: repoint `san-francisco/car-accident-lawyers` rule →
+   `/san-francisco/car-accidents`.
+2. Template nav anchor "San Francisco Personal Injury Attorneys" → change target from
+   /personal-injury-attorneys to /san-francisco (not a WP menu — theme/widget).
+3. GSC: request indexing for /san-francisco and /san-francisco/car-accidents.
+4. Attorney review of the statute/SR-1/deadline wording on both pages.
