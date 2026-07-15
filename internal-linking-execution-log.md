@@ -171,3 +171,50 @@ wp_backups4.json (hub + car pre-surgery), wp_backups5.json (8 link sources) + WP
    /personal-injury-attorneys to /san-francisco (not a WP menu — theme/widget).
 3. GSC: request indexing for /san-francisco and /san-francisco/car-accidents.
 4. Attorney review of the statute/SR-1/deadline wording on both pages.
+
+---
+
+# Round 5 — Re-Audit Corrections (July 15, 2026)
+
+The second third-party audit was verified against live pages and case-study sources
+(~90% accurate, including errors introduced in Round 4). All REST-executable corrections
+applied and live-verified 20/20. Backup: `wp_backups6.json` + WP revisions.
+
+## Car page (/san-francisco/car-accidents)
+- Results section retitled "Representative San Francisco & Bay Area Car Accident Results";
+  intro no longer promises attorney-per-case it doesn't deliver.
+- Attributions corrected per the case sources: Jim Larsen credited on the $285K Golden Gate
+  Park case; $1M case now located ("I-680 in Dublin") and credited to Larsen + Gillin
+  (Andy took the intake call — the overstated "handled from intake through settlement" fixed).
+- Attorney section now "The Attorneys Handling…" featuring Gillin + Larsen (bio links);
+  "case mill" line replaced with a verifiable involvement statement.
+- UM/UIM aligned with the source: uninsured driver → recovered underinsured motorist policy
+  limits (flag: attorney should confirm coverage terminology from the file).
+- Stats cleaned: 40% state-average claim removed (source couldn't support it); two-thirds
+  claim removed; Octavia/Market "#1 / 37 crashes / danger score" replaced with unranked
+  wording; "most dangerous roads" / "highest-collision zones" / "notorious" / "long history"
+  superlatives softened to descriptive language; DataSF dataset remains linked.
+- "Clear liability" → comparative-fault-consistent wording.
+- "Office available 24/7" → phones 24/7, office visits by appointment.
+- SFPD/CHP report paragraphs moved in from the hub (collision-specific local detail).
+- Added "Substantively updated July 2026." (Named "Reviewed by [attorney]" line awaits
+  Casey's designation — not added without an actual reviewer.)
+
+## Hub (/san-francisco)
+- Both car CTAs → PI CTAs ("Talk to a San Francisco Personal Injury Lawyer Today" /
+  "Contact a San Francisco Personal Injury Lawyer").
+- "Every type of car accident injury" → full serious-injury PI range.
+- "San Francisco's at-fault system" → "California's fault-based system".
+- Intro anchor repointed: statewide /car-accident-lawyers → /san-francisco/car-accidents.
+- Local section de-car'd ("Winning an injury case…", ER wording, closing copy) and the
+  SFPD/CHP collision-report paragraphs moved to the car page; courts/hospitals/venue
+  content kept as PI proof.
+
+## Still manual (template/ACF level)
+- Hero line "Injured in a San Francisco car accident?" — template.
+- Nav "San Francisco Personal Injury Attorneys" → statewide — theme.
+- "Nearby Offices" module on the accident-reconstruction article outputting the old car path.
+- /san-francisco-2 in HTML sitemap — sitemap plugin.
+- Named attorney reviewer line for the car page — needs Casey to designate the reviewer.
+- Genuine SF car-accident case studies (only 1 of 4 featured results is SF venue) — content
+  gap only the firm's case files can fill.
