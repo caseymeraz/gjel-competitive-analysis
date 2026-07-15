@@ -218,3 +218,38 @@ applied and live-verified 20/20. Backup: `wp_backups6.json` + WP revisions.
 - Named attorney reviewer line for the car page — needs Casey to designate the reviewer.
 - Genuine SF car-accident case studies (only 1 of 4 featured results is SF venue) — content
   gap only the firm's case files can fill.
+
+---
+
+# Round 6 — Template & Rank Math Investigation (July 15, 2026)
+
+## Environment finding
+Chromium cannot egress from this environment (the outbound proxy resets browser HTTPS
+CONNECTs; curl/python traffic works). Browser-based wp-admin work is not possible here —
+wp-admin automation must go through an authenticated HTTP session instead, which needs
+Casey's real login (app passwords don't work for wp-login).
+
+## Template-issue map (from server-rendered DOM)
+
+| Issue | Location | Where to fix |
+|---|---|---|
+| Hero "Injured in a San Francisco car accident?" | `p.banner-pre-heading` in `section.global-banner.location-pages-specific`, template `page-template-location-ind.php` | ACF banner field on page 3979 (wp-admin page edit) or theme banner partial |
+| Nav "San Francisco Personal Injury Attorneys" → statewide | `aside.related-links nav.nav-heading` inside `section#location-section.sidebar-section` | Location-page sidebar related-links source (ACF/partial), change href to /san-francisco |
+| 866-218-3776 | `div#contact-cta-wrapper.sidebar-item.internal-cta-wrapper` in `aside#sidebar` | Sidebar contact CTA template/widget |
+| 73-review widget | Trustindex Google widget (`ti-widget ti-goog`, `template#trustindex-google-widget-html`) | Trustindex plugin settings — label scope there ("73 reviews across GJEL locations") |
+| "AloneGet" heading | Not in server HTML — JS-injected widget | Locate in the CTA widget/plugin that renders it |
+
+## Discovery: "Nearby Offices" on /car-accident-lawyers/accident-reconstruction (page 3546)
+The module is **9 broken `wp:embed` blocks** rendering as bare URL paths. Every embedded
+path is dead/legacy: `/san-francisco/car-accident-lawyers`,
+`/richmond/personal-injury-attorneys/car-accident-lawyers` (×2), `/antioch/car-accident-attorneys`,
+`/san-jose/personal-injury-attorneys/car-accident`, `/orinda/car-accident-attorneys`,
+`/gilroy-personal-injury-lawyer/…`, etc. This IS post content (REST-fixable): proposed fix
+replaces the embed stack with a clean linked list to the live pages (/san-francisco/car-accidents,
+/san-jose, /richmond, /antioch, /orinda, /gilroy). **Awaiting Casey's go-ahead.**
+
+## Rank Math redirect state (re-verified)
+`san-francisco/car-accident-lawyers`, `san-francisco/personal-injury-attorneys`, and
+`san-francisco-2` all still 301 → hub, `x-redirect-by: Rank Math`. The stored rule for the
+car path was NOT removed by the API (its "deleted" responses acted on a phantom). Fixing it
+requires wp-admin (Rank Math → Redirections) — pending Casey's login or his own 2-minute edit.
