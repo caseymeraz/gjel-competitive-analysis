@@ -290,3 +290,48 @@ own that URL rather than redirect to it.
   (30s in wp-admin) to catch any cached/briefly-indexed references.
 - Programmatic wp-admin login is blocked by Cloudflare (520 on wp-login POST; REST is 200) —
   Rank Math standalone-rule edits still require Casey's browser session.
+
+---
+
+# Round 8 — Internal link building for the SF car page (July 16, 2026)
+
+Fresh full-site re-crawl found the SF car page had only **9 inbound internal links (~7
+meaningful; 2 are HTML sitemaps)** and **1 live external referring domain (5 all-time)** —
+too thin to compete. Added 7 contextual in-content links via REST, all live-verified 7/7:
+
+| Source page | Anchor |
+|---|---|
+| /san-francisco/truck-accident | San Francisco car accident lawyers |
+| /san-francisco/motorcycle-accidents | San Francisco car accident lawyers |
+| /san-francisco/brain-injury-attorney | San Francisco car accident lawyers |
+| /san-francisco/san-francisco-wrongful-death-attorney | San Francisco car accident lawyers |
+| /san-francisco/electric-scooter-accidents | San Francisco car accident attorneys |
+| /oakland (hub) | San Francisco car accident lawyers |
+| /san-jose (hub) | San Francisco car accident lawyers |
+
+Meaningful editorial inbound links: ~7 → ~14. Backup wp_backups9.json + WP revisions.
+
+## Still NOT enough to "dominate" — remaining link sources need wp-admin/ACF or off-site
+- Statewide /car-accident-lawyers (534), /locations (501), /personal-injury-attorneys (17976):
+  ACF-built, raw not REST-exposed — add SF car link in wp-admin.
+- Location-template sidebar "related links" nav: add the car page (theme/ACF).
+- **External link building** is the real gap: only 1 live referring domain. Needs local
+  citations, directories, and PR — off-site work, not WP edits.
+- Genuine SF car case studies (only 1 of 4 featured results is SF venue).
+
+# Data-source audit for lead attribution (July 16, 2026) — all connected MCP checked
+User asked for past-week top leads by page across GSC, analytics, CallRail. Checked every
+connected source:
+- **HubSpot** = Juris Digital's agency CRM (user cmeraz@jurisdigital.com, acct 23597402).
+  Only GJEL record is a single COMPANY (domain gjel.com, lifecyclestage "customer") — i.e.
+  GJEL as an agency client, NOT GJEL's consumer intake. No car-accident leads here.
+- **Meta Ads** = no GJEL ad account (accounts are other JD clients: Boyle, Sonn, D'Amore, etc.).
+- **Twilio** = documentation search only, no account/call data.
+- **CallRail** = no connector attached. **GA4** = no connector.
+- **Ahrefs Web Analytics** = zero data (tracking script not installed on gjel.com).
+- **GSC page/query tables** = not synced for shared Ahrefs project 458534 (all ranges error).
+- **Available**: GSC aggregate history only. Shows a steep organic decline —
+  clicks 9,717 (May) → 5,596 (June) → 1,713 (July MTD); avg position ~10 → ~14.
+
+Conclusion: GJEL's real lead attribution (calls + forms by page) is not reachable from any
+connected system. Requires GJEL's own CallRail API + GA4 (or GSC access), none connected here.
