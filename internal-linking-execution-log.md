@@ -253,3 +253,11 @@ replaces the embed stack with a clean linked list to the live pages (/san-franci
 `san-francisco-2` all still 301 → hub, `x-redirect-by: Rank Math`. The stored rule for the
 car path was NOT removed by the API (its "deleted" responses acted on a phantom). Fixing it
 requires wp-admin (Rank Math → Redirections) — pending Casey's login or his own 2-minute edit.
+
+## Round 6 fix executed (July 16, 2026): Nearby Offices block repaired
+Page 3546 (/car-accident-lawyers/accident-reconstruction): the 9 broken wp:embed blocks
+(all dead/legacy paths, rendering as bare text) replaced with a clean linked list to six
+live pages — /san-francisco/car-accidents (with office address), /san-jose (with address),
+/richmond, /antioch, /orinda, /gilroy. Live-verified 7/7: all dead paths gone, all live
+links render, heading kept. Backup: wp_backups7.json + WP revision.
+This also adds one more in-content link to the new SF car page (now 8 inbound: bridge + 7).
