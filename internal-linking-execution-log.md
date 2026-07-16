@@ -261,3 +261,32 @@ live pages — /san-francisco/car-accidents (with office address), /san-jose (wi
 /richmond, /antioch, /orinda, /gilroy. Live-verified 7/7: all dead paths gone, all live
 links render, heading kept. Backup: wp_backups7.json + WP revision.
 This also adds one more in-content link to the new SF car page (now 8 inbound: bridge + 7).
+
+---
+
+# Round 7 — Adopt the equity URL /san-francisco/car-accident-lawyers (July 16, 2026)
+
+Casey removed the standalone Rank Math redirect and identified that
+`/san-francisco/car-accident-lawyers` holds backlink equity — so the live car page should
+own that URL rather than redirect to it.
+
+## Done (REST, live-verified)
+- **Renamed WP page 22040 slug** `car-accidents` → `car-accident-lawyers` (parent still
+  /san-francisco). The car page now serves at **https://www.gjel.com/san-francisco/car-accident-lawyers**
+  (200) — capturing the equity URL directly, no redirect hop. Title unchanged
+  ("San Francisco Car Accident Lawyers | GJEL Attorneys").
+- **Repointed all 12 internal links** across 11 pages from `/san-francisco/car-accidents`
+  → `/san-francisco/car-accident-lawyers`: hub 3979 (×2: bridge + intro anchor),
+  accident-reconstruction 3546, the 8 SF car source pages (3416, 3467, 3468, 3460, 3459,
+  15031, 3924, 3925). Live re-check: 6/6 sampled sources clean, 0 stale refs, new page 200.
+- Backups: `wp_backups8_slug.json` (old slug) + `wp_backups8_links.json` (11 page bodies)
+  + WP revisions.
+
+## Note / minor manual item
+- `/san-francisco/car-accidents` (the 1-day interim slug) now **404s** — Rank Math did not
+  auto-create a redirect on this rename. It is fully orphaned (all internal links moved off
+  it) and had no external equity (1 day old), so impact is negligible. Optional tidy-up:
+  add a Rank Math redirect `/san-francisco/car-accidents` → `/san-francisco/car-accident-lawyers`
+  (30s in wp-admin) to catch any cached/briefly-indexed references.
+- Programmatic wp-admin login is blocked by Cloudflare (520 on wp-login POST; REST is 200) —
+  Rank Math standalone-rule edits still require Casey's browser session.
